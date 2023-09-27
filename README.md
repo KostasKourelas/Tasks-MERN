@@ -117,9 +117,9 @@ Don't forget to give the project a star! Thanks again!
 If you'd like to contribute to this project, please follow these steps:
 
 1. Fork the Project
-2. Create a new branch for your feature or bug fix: git checkout -b feature/my-feature or git checkout -b bugfix/fix-issue.
-3. Commit your changes: git commit -m "Add new feature" or git commit -m "Fix issue".
-4. Push your branch to your fork: git push origin feature/my-feature.
+2. Create a new branch for your feature or bug fix: **git checkout -b feature/my-feature** or **git checkout -b bugfix/fix-issue**.
+3. Commit your changes: **git commit -m "Add new feature"** or **git commit -m "Fix issue"**.
+4. Push your branch to your fork: **git push origin feature/my-feature**.
 5. Create a pull request against the main branch of this repository.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
