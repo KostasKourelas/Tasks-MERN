@@ -94,10 +94,10 @@ function EditTask() {
             onChange={(e) => setStatus(e.target.value)}
             required
           >
-            <option value="">Select Priority</option>
-            <option value="1">uncompleted</option>
-            <option value="2">inprogress</option>
-            <option value="3">completed</option>
+            <option value="">Select Status</option>
+            <option value="1">Uncompleted</option>
+            <option value="2">In progress</option>
+            <option value="3">Completed</option>
           </select>
       </div>
       <div>

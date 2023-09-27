@@ -8,6 +8,7 @@ function TaskBoard() {
     const [tasks, setTasks] = useState([]);
     const [loading, setLoading] = useState(true); // Add loading state
     const { id } = useParams();
+    
 
     useEffect(() => {
         fetch("http://localhost:8000/tasks")
@@ -22,10 +23,10 @@ function TaskBoard() {
         });
     }, []);
 
-
+    
   return (
     <>
-    <Link className="actions plus" to={`/tasks/create/`}><AiFillPlusSquare /></Link>
+    <Link className="actions plus" to={`/tasks/create/`}><AiFillPlusSquare />  Add Task</Link>
     <section>
         <div className="board one">
             <h3>To-Do</h3>
@@ -58,7 +59,7 @@ function TaskBoard() {
                     <div className="actions-container">
                         <Link className="actions" to={`/tasks/details/${task._id}`}><AiOutlineBars /></Link>
                         <Link className="actions" to={`/tasks/delete/${task._id}`}><AiFillDelete /></Link>
-                        <Link className="actions" to={`/tasks/edit/${task._id}`}><AiFillEdit /></Link>
+                        <Link className="actions" to={`/tasks/edit/${task._id}`}><AiFillEdit /></Link> 
                     </div>
                 </li>
                 )))}
