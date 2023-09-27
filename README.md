@@ -46,7 +46,8 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-![Task-Manager-App](https://github.com/KostasKourelas/Tasks-MERN/assets/71917584/0ef174a9-4fb7-4b8e-9a05-334935db3735)
+![Task-Manager-App](https://github.com/KostasKourelas/Tasks-MERN/assets/71917584/58c14121-936e-4c0a-a3cf-87a2ace953b6)
+
 Task Manager is a full-stack web application. It was created to simplify task management by providing users with a user-friendly interface to create, update, and organize their tasks. With Task Manager, you can efficiently manage your daily to-do lists and keep your projects on track.
 
 ### Built With
