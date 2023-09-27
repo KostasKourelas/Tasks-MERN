@@ -23,6 +23,7 @@ function Home() {
   return (
     <div>
       <h2>Task List</h2>
+      <Link to={`/tasks/board/`}>Dashboard</Link>
       <Link className="actions plus" to={`/tasks/create/`}><AiFillPlusSquare /></Link>
       {loading ? ( 
         <span className="loader"></span>
@@ -44,7 +45,12 @@ function Home() {
                 <td>{index + 1}</td>
                 <td>{task.subject}</td>
                 <td>{task.description}</td>
-                <td>{task.status}</td>
+                <td>
+                    {task.status === 1 ? "uncompleted" :
+                    task.status === 2 ? "inprogress" :
+                    task.status === 3 ? "completed" :
+                    "Unknown"}
+                </td>
                 <td>
                     {task.priority === 1 ? "Low" :
                     task.priority === 2 ? "Normal" :

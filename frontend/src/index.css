@@ -93,6 +93,12 @@ form {
   border-radius: 10px;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 .list-container {
   display: grid;
   place-items: center;
@@ -100,6 +106,30 @@ form {
 
 .list-container li {
   margin-top: 10px;
+}
+
+section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  min-height: 98dvh;
+}
+
+.board {
+  width: 250px;
+  min-height: 80dvh;
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.task-wrapper {
+  list-style-type: none;
+  padding: 10px;
+  margin-top: 1dvh;
+  background-color: white;
+  border-radius: 10px;
 }
 
 .loader {

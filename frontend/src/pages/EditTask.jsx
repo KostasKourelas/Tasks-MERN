@@ -87,15 +87,18 @@ function EditTask() {
       </div>
       <div>
         <label htmlFor="status">Status:</label>
-        <input
-          type="text"
-          id="status"
-          name="status"
-          placeholder={task.status}
-          value={status}
-          onChange={(e) => setStatus(e.target.value)}
-          required
-        />
+        <select
+            id="status"
+            name="status"
+            value={status}
+            onChange={(e) => setStatus(e.target.value)}
+            required
+          >
+            <option value="">Select Priority</option>
+            <option value="1">uncompleted</option>
+            <option value="2">inprogress</option>
+            <option value="3">completed</option>
+          </select>
       </div>
       <div>
         <label htmlFor="priority">Priority:</label>

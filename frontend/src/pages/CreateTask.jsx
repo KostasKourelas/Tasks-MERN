@@ -12,14 +12,11 @@ function CreateTask() {
 
   const handleSaveTask = () => {
     const data = {
-      subject,
-      description,
-      status,
-      priority
+      status
     };
     setLoading(true);
     fetch("http://localhost:8000/tasks", {
-      method: "POST",
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
@@ -70,14 +67,18 @@ function CreateTask() {
         </div>
         <div>
           <label htmlFor="status">Status:</label>
-          <input
-            type="text"
+          <select
             id="status"
             name="status"
             value={status}
             onChange={(e) => setStatus(e.target.value)}
             required
-          />
+          >
+            <option value="">Select Priority</option>
+            <option value="1">uncompleted</option>
+            <option value="2">inprogress</option>
+            <option value="3">completed</option>
+          </select>
         </div>
         <div>
           <label htmlFor="priority">Priority:</label>
