@@ -67,7 +67,7 @@ function EditTask() {
           type="text"
           id="subject"
           name="subject"
-          value={subject}
+          value={task.subject}
           onChange={(e) => setSubject(e.target.value)}
           required
         />
@@ -78,7 +78,7 @@ function EditTask() {
           type="text"
           id="description"
           name="description"
-          value={description}
+          value={task.description}
           onChange={(e) => setDescription(e.target.value)}
           required
         />
@@ -89,7 +89,7 @@ function EditTask() {
           type="text"
           id="status"
           name="status"
-          value={status}
+          value={task.status}
           onChange={(e) => setStatus(e.target.value)}
           required
         />
@@ -99,7 +99,7 @@ function EditTask() {
         <select
           id="priority"
           name="priority"
-          value={priority}
+          value={task.priority}
           onChange={(e) => setPriority(e.target.value)}
           required
         >

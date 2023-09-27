@@ -21,7 +21,7 @@ th, td {
 }
 
 th {
-  background-color: #45a049;
+  background-color: #878887;
   color: white;
   font-weight: bold;
 }
@@ -78,10 +78,12 @@ form {
 }
 
 .plus {
-  color: #4CAF50;
+  color: #ffffff;
+  background-color: #4CAF50;
   font-size: 40px;
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 1dvh;
 }
 
 .list-container ul{
