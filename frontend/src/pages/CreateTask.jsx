@@ -12,11 +12,14 @@ function CreateTask() {
 
   const handleSaveTask = () => {
     const data = {
-      status
+      subject, 
+      description,
+      status, 
+      priority, 
     };
     setLoading(true);
     fetch("http://localhost:8000/tasks", {
-      method: "PUT",
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
@@ -28,13 +31,13 @@ function CreateTask() {
           navigate("/");
         } else {
           setLoading(false);
-          console.error("An error occurred while creating the book.");
+          console.error("An error occurred while creating the task.");
           // You can log more details about the error using: console.error(response);
         }
       })
       .catch((error) => {
         setLoading(false);
-        console.error("An error occurred while creating the book:", error);
+        console.error("An error occurred while creating the task:", error);
       });
   };
 
