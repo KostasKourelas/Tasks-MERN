@@ -67,6 +67,7 @@ function EditTask() {
           type="text"
           id="subject"
           name="subject"
+          placeholder={task.subject}
           value={subject}
           onChange={(e) => setSubject(e.target.value)}
           required
@@ -78,6 +79,7 @@ function EditTask() {
           type="text"
           id="description"
           name="description"
+          placeholder={task.description}
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           required
@@ -89,6 +91,7 @@ function EditTask() {
           type="text"
           id="status"
           name="status"
+          placeholder={task.status}
           value={status}
           onChange={(e) => setStatus(e.target.value)}
           required
