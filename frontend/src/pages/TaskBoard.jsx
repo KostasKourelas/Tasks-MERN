@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { AiFillDelete, AiFillEdit, AiOutlineBars, AiFillPlusSquare } from "react-icons/ai";
+import { AiFillDelete, AiFillEdit, AiOutlineBars, AiFillPlusSquare, AiOutlineArrowRight } from "react-icons/ai";
 import EditTask from "./EditTask";
 import "../index.css";
 
@@ -54,7 +54,7 @@ function TaskBoard() {
     
   return (
     <>
-    <Link className="actions plus" to={`/tasks/create/`}><AiFillPlusSquare />  Add Task</Link>
+    <Link className="plus" to={`/tasks/create/`}><AiFillPlusSquare />  Add Task</Link>
     <section>
         <div className="board one">
             <h3>To-Do</h3>
@@ -87,12 +87,12 @@ function TaskBoard() {
                     <div className="actions-container">
                         <div>
                             <button className="status-btn"  onClick={() => handleStatusChange(task._id, 2)}>
-                                In Progress</button>
+                                In Progress <AiOutlineArrowRight /></button>
                         </div>
                         <div className="actions-wrapper">
                             <Link className="actions" to={`/tasks/details/${task._id}`}><AiOutlineBars /></Link>
-                            <Link className="actions" to={`/tasks/delete/${task._id}`}><AiFillDelete /></Link>
                             <Link className="actions" to={`/tasks/edit/${task._id}`}><AiFillEdit /></Link> 
+                            <Link className="actions delete" to={`/tasks/delete/${task._id}`}><AiFillDelete /></Link>
                         </div>
                     </div>
                 </li>
@@ -131,12 +131,12 @@ function TaskBoard() {
                     <div className="actions-container">
                         <div>
                             <button className="status-btn"  onClick={() => handleStatusChange(task._id, 3)}>
-                                Completed</button>
+                                Completed <AiOutlineArrowRight /></button>
                         </div>
                         <div className="actions-wrapper">
                             <Link className="actions" to={`/tasks/details/${task._id}`}><AiOutlineBars /></Link>
-                            <Link className="actions" to={`/tasks/delete/${task._id}`}><AiFillDelete /></Link>
                             <Link className="actions" to={`/tasks/edit/${task._id}`}><AiFillEdit /></Link> 
+                            <Link className="actions  delete" to={`/tasks/delete/${task._id}`}><AiFillDelete /></Link>
                         </div>
                     </div>
                 </li>
@@ -174,8 +174,8 @@ function TaskBoard() {
                     <span className="date"> {new Date(task.updatedAt).toLocaleString()}</span><br />
                     <div className="actions-wrapper">
                         <Link className="actions" to={`/tasks/details/${task._id}`}><AiOutlineBars /></Link>
-                        <Link className="actions" to={`/tasks/delete/${task._id}`}><AiFillDelete /></Link>
                         <Link className="actions" to={`/tasks/edit/${task._id}`}><AiFillEdit /></Link>
+                        <Link className="actions  delete" to={`/tasks/delete/${task._id}`}><AiFillDelete /></Link>
                     </div>
                 </li>
                 )))}

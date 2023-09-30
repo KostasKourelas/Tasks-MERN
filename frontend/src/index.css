@@ -86,8 +86,18 @@ form {
   font-size: 16px;
 }
 
+.actions:hover {
+  scale: 1.1;
+}
+
+.delete {
+  color: #d8392d;
+}
+
 .plus {
   font-size: 17px;
+  text-decoration: none;
+  color: rgb(62, 62, 66);
   font-weight: 100;
   background-color: #ffffff;
   display: flex;
@@ -170,6 +180,9 @@ span.date {
   border-radius: 4px;
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 5px;
 }
 
 .status-btn:hover {
