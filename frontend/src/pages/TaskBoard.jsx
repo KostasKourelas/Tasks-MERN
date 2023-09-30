@@ -23,6 +23,34 @@ function TaskBoard() {
         });
     }, []);
 
+
+    const handleStatusChange = async (id, newStatus) => {
+        try {
+          const response = await fetch(`http://localhost:8000/tasks/${id}`, {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ status: newStatus }),
+          });
+    
+          if (response.ok) {
+            // Update the task status in the frontend
+            const updatedTasks = tasks.map((task) => {
+              if (task._id === id) {
+                return { ...task, status: newStatus };
+              }
+              return task;
+            });
+    
+            setTasks(updatedTasks);
+          } else {
+            console.error("Failed to update task status");
+          }
+        } catch (error) {
+          console.error("Error updating task status:", error);
+        }
+      };
     
   return (
     <>
@@ -57,9 +85,15 @@ function TaskBoard() {
                     "Unknown"} Priority</span> <br />
                     <span className="date"> {new Date(task.updatedAt).toLocaleString()}</span><br />
                     <div className="actions-container">
-                        <Link className="actions" to={`/tasks/details/${task._id}`}><AiOutlineBars /></Link>
-                        <Link className="actions" to={`/tasks/delete/${task._id}`}><AiFillDelete /></Link>
-                        <Link className="actions" to={`/tasks/edit/${task._id}`}><AiFillEdit /></Link> 
+                        <div>
+                            <button className="status-btn"  onClick={() => handleStatusChange(task._id, 2)}>
+                                In Progress</button>
+                        </div>
+                        <div className="actions-wrapper">
+                            <Link className="actions" to={`/tasks/details/${task._id}`}><AiOutlineBars /></Link>
+                            <Link className="actions" to={`/tasks/delete/${task._id}`}><AiFillDelete /></Link>
+                            <Link className="actions" to={`/tasks/edit/${task._id}`}><AiFillEdit /></Link> 
+                        </div>
                     </div>
                 </li>
                 )))}
@@ -95,9 +129,15 @@ function TaskBoard() {
                     "Unknown"} Priority</span> <br />
                     <span className="date"> {new Date(task.updatedAt).toLocaleString()}</span><br />
                     <div className="actions-container">
-                        <Link className="actions" to={`/tasks/details/${task._id}`}><AiOutlineBars /></Link>
-                        <Link className="actions" to={`/tasks/delete/${task._id}`}><AiFillDelete /></Link>
-                        <Link className="actions" to={`/tasks/edit/${task._id}`}><AiFillEdit /></Link>
+                        <div>
+                            <button className="status-btn"  onClick={() => handleStatusChange(task._id, 3)}>
+                                Completed</button>
+                        </div>
+                        <div className="actions-wrapper">
+                            <Link className="actions" to={`/tasks/details/${task._id}`}><AiOutlineBars /></Link>
+                            <Link className="actions" to={`/tasks/delete/${task._id}`}><AiFillDelete /></Link>
+                            <Link className="actions" to={`/tasks/edit/${task._id}`}><AiFillEdit /></Link> 
+                        </div>
                     </div>
                 </li>
                 )))}
@@ -132,7 +172,7 @@ function TaskBoard() {
                     task.priority === 4 ? "High" :
                     "Unknown"} Priority</span> <br />
                     <span className="date"> {new Date(task.updatedAt).toLocaleString()}</span><br />
-                    <div className="actions-container">
+                    <div className="actions-wrapper">
                         <Link className="actions" to={`/tasks/details/${task._id}`}><AiOutlineBars /></Link>
                         <Link className="actions" to={`/tasks/delete/${task._id}`}><AiFillDelete /></Link>
                         <Link className="actions" to={`/tasks/edit/${task._id}`}><AiFillEdit /></Link>

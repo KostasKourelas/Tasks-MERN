@@ -1,5 +1,6 @@
 body{
   font-family: 'Open Sans';
+  background-color: #f2f6f9;
 }
 
 td, th {
@@ -62,26 +63,33 @@ input[type=submit]:hover {
 
 form {
   border-radius: 5px;
-  background-color: #f2f2f2;
   padding: 20px;
 }
 
 .actions-container {
     display: flex;
     gap: 14px;
-    justify-content: flex-end;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.actions-wrapper {
+  display: flex;
+  gap: 0.7rem;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .actions {
   text-decoration: none;
   color: rgb(62, 62, 66);
-  
+  font-size: 16px;
 }
 
 .plus {
   font-size: 17px;
   font-weight: 100;
-  background-color: #f8f8f8;
+  background-color: #ffffff;
   display: flex;
   align-items: center;
   width: fit-content;
@@ -89,6 +97,7 @@ form {
   border-radius: 5px;
   margin-bottom: 1dvh;
   gap: 0.3rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .list-container ul{
@@ -123,16 +132,18 @@ section {
 .board {
   width: 90%;
   min-height: 80dvh;
-  background-color: #f8f8f8;
+  background-color: white;
   border-radius: 12px;
   padding: 12px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
 }
 
 .task-wrapper {
   list-style-type: none;
   padding: 10px;
-  margin-top: 1dvh;
-  background-color: white;
+  font-size: 14px;
+  margin-top: 1.4dvh;
+  background-color: #f2f6f9;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
@@ -146,8 +157,23 @@ span.date {
   color: white;
   padding: 3px 5px;
   border-radius: 4px;
-  margin-top: 12px;
+  margin-top: 4px;
+  display: inline-block;
   font-size: 11px;
+}
+
+.status-btn {
+  font-size: 11px;
+  background-color: white;
+  color: black;
+  padding: 6px 9px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.status-btn:hover {
+  scale: 1.03;
 }
 
 .loader {

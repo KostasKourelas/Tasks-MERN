@@ -57,7 +57,7 @@ router.get('/:id', async (req, res) => {
 })
 
 
-//UPDATE
+//UPDATE PUT
 router.put('/:id', async (req, res) => {
     try {
         if (
@@ -71,6 +71,23 @@ router.put('/:id', async (req, res) => {
             })
         }
 
+        const { id } = req.params
+        const result = await Task.findByIdAndUpdate(id, req.body)
+
+        if (!result) {
+            return res.status(404).json({message: 'Task not found'})
+        }
+
+        return res.status(200).send({message: 'Task updated successfully'})
+    }catch(error) {
+        console.log(error.message)
+        res.status(500).send({message: error.message})
+    }
+})
+
+//UPDATE PATCH
+router.patch('/:id', async (req, res) => {
+    try {
         const { id } = req.params
         const result = await Task.findByIdAndUpdate(id, req.body)
 
