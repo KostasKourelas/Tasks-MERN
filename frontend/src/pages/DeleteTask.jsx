@@ -32,11 +32,10 @@ function DeleteTask() {
   };
   
   return (
-    <div >
-      <h1>Delete Book</h1>
+    <div className='deletePage-Container'>
       {loading ? <span className='loader'></span> : ''}
-      <div>
-        <h3>Are You Sure You want to delete this book?</h3>
+      <div className='delete-Page'>
+        <h3>Are You Sure You want to delete this task?</h3>
         <button onClick={handleDeleteBook}>Yes, Delete it</button>
       </div>
     </div>

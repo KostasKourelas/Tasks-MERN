@@ -190,6 +190,19 @@ span.date {
   scale: 1.03;
 }
 
+.deletePage-Container {
+  display: grid;
+  place-items: center;
+  height: 96dvh;
+}
+
+.delete-Page {
+  padding: 25dvh 13dvw;
+  background-color: white;
+  border-radius: 13px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
 .loader {
     border: 16px solid #f3f3f3;
     border-radius: 50%;
