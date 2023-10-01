@@ -29,7 +29,7 @@ function ShowTasks() {
   }
   return (
     <>
-    <h2>Task Details</h2>
+    <h2 style={{textAlign: "center"}}>Task Details</h2>
     <div className="list-container">
       <ul>
         <li>
@@ -39,21 +39,33 @@ function ShowTasks() {
           <strong>Description:</strong> {task.description}
         </li>
         <li>
-          <strong>Status:</strong> {task.status}
+        <span className="priority" style={{
+                        backgroundColor:
+                        task.priority === 1
+                            ? '#4caf50'
+                            : task.priority === 2
+                            ? '#00bcd4'
+                            : task.priority === 3
+                            ? '#ffde7d'
+                            : task.priority === 4
+                            ? '#f6416c'
+                            : 'gray'
+                    }}> 
+                    {task.priority === 1 ? "Low" :
+                    task.priority === 2 ? "Normal" :
+                    task.priority === 3 ? "Urgent" :
+                    task.priority === 4 ? "High" :
+                    "Unknown"} Priority</span>
         </li>
         <li>
-          <strong>Priority: </strong> 
-              {task.priority === 1 ? "Low" :
-              task.priority === 2 ? "Normal" :
-              task.priority === 3 ? "Urgent" :
-              task.priority === 4 ? "High" :
+          <strong >Status: </strong> 
+              {task.status === 1 ? "To-Do" :
+              task.status === 2 ? "In Progress" :
+              task.status === 3 ? "Completed" :
               "Unknown"}
         </li>
         <li>
-          <strong>Created At:</strong> {new Date(task.createdAt).toLocaleString()}
-        </li>
-        <li>
-          <strong>Updated At:</strong> {new Date(task.updatedAt).toLocaleString()}
+        <span className="date"> {new Date(task.updatedAt).toLocaleString()}</span><br />
         </li>
       </ul>
     </div>

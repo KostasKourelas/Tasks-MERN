@@ -112,9 +112,10 @@ form {
 
 .list-container ul{
   list-style-type: none;
-  border: 1px solid rgb(33, 33, 53);
-  padding: 30px;
+  padding: 15dvh 7dvw;
   border-radius: 10px;
+  background-color: white;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
 ul {
